@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node bin/fargate_service_discovery.ts"
+}
