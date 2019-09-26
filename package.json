@@ -1,6 +1,12 @@
 {
   "name": "fargate_service_discovery",
   "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/Mic-U/fargate_service_discovery_tamplate"
+  },
+  "author": {
+    "name": "Mic-U"
+  },
   "bin": {
     "fargate_service_discovery": "bin/fargate_service_discovery.js"
   },
