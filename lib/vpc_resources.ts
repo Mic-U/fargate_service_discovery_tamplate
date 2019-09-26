@@ -1,7 +1,7 @@
-import { Stack, Construct } from '@aws-cdk/core';
+import { Construct } from '@aws-cdk/core';
 import { Vpc } from '@aws-cdk/aws-ec2';
 
-export class VPCResources extends Stack {
+export class VPCResources extends Construct {
   public readonly vpc: Vpc;
 
   constructor(scope: Construct, id: string) {
