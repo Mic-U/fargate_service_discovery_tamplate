@@ -8,14 +8,22 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "lint": "eslint ./lib/**/*.ts"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.9.0",
     "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "aws-cdk": "^1.9.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
-    "aws-cdk": "^1.9.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.6.2"
   },

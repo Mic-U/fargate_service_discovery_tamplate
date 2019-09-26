@@ -1,0 +1,34 @@
+{
+  "env": {
+      "browser": true,
+      "es6": true
+  },
+  "extends": "airbnb-base",
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-node"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "project": "./tsconfig.json",
+      "sourceType": "module"
+  },
+  "settings": {
+      "node": {
+          "tryExtensions": [".ts", ".js", ".json", ".node"]
+      },
+      "import/resolver": {
+          "node": {
+              "extensions": [".ts", ".js", ".json", ".node"]
+          }
+      }
+  },
+  "rules": {
+      "import/prefer-default-export": 0,
+      "node/no-missing-import": 2
+  }
+}
