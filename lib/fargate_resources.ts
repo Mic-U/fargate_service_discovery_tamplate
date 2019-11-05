@@ -6,9 +6,10 @@ import {
   Protocol,
   FargateService
 } from "@aws-cdk/aws-ecs";
+import { ApplicationLoadBalancedFargateService } from "@aws-cdk/aws-ecs-patterns";
 import { Role, ServicePrincipal, ManagedPolicy } from "@aws-cdk/aws-iam";
 import { NamespaceType, DnsRecordType } from "@aws-cdk/aws-servicediscovery";
-import { Vpc, SubnetType } from "@aws-cdk/aws-ec2";
+import { Vpc } from "@aws-cdk/aws-ec2";
 
 interface FargateResourcesProp extends StackProps {
   vpc: Vpc;
@@ -75,7 +76,7 @@ export class FargateResources extends Construct {
       protocol: Protocol.TCP
     });
 
-    this.fargateService = new FargateService(this, "FargateService", {
+    new ApplicationLoadBalancedFargateService(this, "FargateService", {
       cluster,
       taskDefinition,
       cloudMapOptions: {
@@ -83,10 +84,7 @@ export class FargateResources extends Construct {
         dnsTtl: Duration.seconds(60),
         failureThreshold: 3
       },
-      desiredCount: desiredCountParam.valueAsNumber,
-      vpcSubnets: {
-        subnetType: SubnetType.PRIVATE
-      }
+      desiredCount: desiredCountParam.valueAsNumber
     });
   }
 }
