@@ -26,13 +26,6 @@ export class FargateResources extends Construct {
       default: "example.com."
     });
 
-    const desiredCountParam = new CfnParameter(this, "DesiredCount", {
-      type: "Number",
-      description:
-        "The desired number of instantiations of the task definition to keep running on the service.",
-      default: 3
-    });
-
     const cluster = new Cluster(this, "Cluster", {
       vpc: prop.vpc,
       defaultCloudMapNamespace: {
@@ -75,7 +68,6 @@ export class FargateResources extends Construct {
       containerPort: 80,
       protocol: Protocol.TCP
     });
-
     new ApplicationLoadBalancedFargateService(this, "FargateService", {
       cluster,
       taskDefinition,
@@ -84,7 +76,7 @@ export class FargateResources extends Construct {
         dnsTtl: Duration.seconds(60),
         failureThreshold: 3
       },
-      desiredCount: desiredCountParam.valueAsNumber
+      desiredCount: 3
     });
   }
 }
