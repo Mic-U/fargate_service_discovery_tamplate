@@ -22,7 +22,7 @@
     "@types/jest": "^24.9.1",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
-    "aws-cdk": "^1.30.0",
+    "aws-cdk": "^1.174.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-import-resolver-node": "^0.3.3",
